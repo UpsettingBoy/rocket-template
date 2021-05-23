@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ title }} - My App{% endblock %}</title>
+
+    {% include "components/styles.html" %}
+</head>
+
+<body>
+    {% include "components/nav.html" %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="text-center mb-2">
+        Original template: https://www.tailwindtoolbox.com/templates/hero-product
+    </footer>
+</body>
+
+</html>

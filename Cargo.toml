@@ -1,0 +1,11 @@
+[package]
+authors = [""]
+edition = "2018"
+name    = "rocket-template"
+version = "0.1.0"
+
+[dependencies]
+askama         = { version = "0.10.5", features = ["with-rocket"] }
+askama_rocket  = "0.10.0"
+rocket         = "0.4.10"
+rocket_contrib = { version = "0.4.10", default-features = false, features = ["serve"] }
