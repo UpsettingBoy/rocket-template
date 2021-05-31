@@ -10,7 +10,6 @@ More content will be added in wikis in the future.
 
 ## Usage
 1. Clone the repo.
-1. Navigate to `public` and execute `npm install`, then `npm run css` to create the main css file for development.
 1. Under the main folder execute `cargo run`.
 1. Navigate to `localhost:8000`.
 
