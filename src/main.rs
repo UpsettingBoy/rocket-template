@@ -8,6 +8,7 @@ mod templates;
 fn main() {
     rocket::ignite()
         .mount("/public/css", StaticFiles::from("public/css"))
+        .mount("/public/assets", StaticFiles::from("public/assets"))
         .mount("/", routes![index])
         .launch();
 }
