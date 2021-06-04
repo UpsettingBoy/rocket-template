@@ -1,0 +1,70 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  x86_64-unknown-linux-gnu:
+    runs-on: ubuntu-latest
+    name: x86_64-unknown-linux-gnu
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        target: x86_64-unknown-linux-gnu
+        override: true
+    - uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --release --verbose
+    - uses: actions-rs/cargo@v1
+      with:
+        command: test
+        args: --release --verbose
+
+  x86_64-pc-windows-msvc:
+    runs-on: windows-latest
+    name: x86_64-pc-windows-msvc
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        target: x86_64-pc-windows-msvc
+        override: true
+    - uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --release --verbose
+    - uses: actions-rs/cargo@v1
+      with:
+        command: test
+        args: --release --verbose
+
+  x86_64-apple-darwin	:
+      runs-on: macos-latest
+      name: x86_64-apple-darwin
+      steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: x86_64-apple-darwin
+          override: true
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --verbose
+      - uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: --release --verbose
+
+      
