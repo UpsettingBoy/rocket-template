@@ -14,16 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     name: x86_64-unknown-linux-gnu
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions-rs/toolchain@v1
+    - name: Repo checkout
+      uses: actions/checkout@v2
+    - name: Toolchain setup
+      uses: actions-rs/toolchain@v1
       with:
         target: x86_64-unknown-linux-gnu
         override: true
-    - uses: actions-rs/cargo@v1
+    - name: Build release
+      uses: actions-rs/cargo@v1
       with:
         command: build
         args: --release --verbose
-    - uses: actions-rs/cargo@v1
+    - name: Test release
+      uses: actions-rs/cargo@v1
       with:
         command: test
         args: --release --verbose
@@ -32,16 +36,20 @@ jobs:
     runs-on: windows-latest
     name: x86_64-pc-windows-msvc
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions-rs/toolchain@v1
+    - name: Repo checkout
+      uses: actions/checkout@v2
+    - name: Toolchain setup
+      uses: actions-rs/toolchain@v1
       with:
         target: x86_64-pc-windows-msvc
         override: true
-    - uses: actions-rs/cargo@v1
+    - name: Build release
+      uses: actions-rs/cargo@v1
       with:
         command: build
         args: --release --verbose
-    - uses: actions-rs/cargo@v1
+    - name: Test release
+      uses: actions-rs/cargo@v1
       with:
         command: test
         args: --release --verbose
@@ -50,16 +58,20 @@ jobs:
       runs-on: macos-latest
       name: x86_64-apple-darwin
       steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
+      - name: Repo checkout
+        uses: actions/checkout@v2
+      - name: Toolchain setup
+        uses: actions-rs/toolchain@v1
         with:
           target: x86_64-apple-darwin
           override: true
-      - uses: actions-rs/cargo@v1
+      - name: Build release
+        uses: actions-rs/cargo@v1
         with:
           command: build
           args: --release --verbose
-      - uses: actions-rs/cargo@v1
+      - name: Test release
+        uses: actions-rs/cargo@v1
         with:
           command: test
           args: --release --verbose
