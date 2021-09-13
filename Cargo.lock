@@ -687,9 +687,9 @@ dependencies = [
 
 [[package]]
 name = "npm_rs"
-version = "0.1.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b64e71171f19480854881b632acd1dad70a13bf8259158c017830df8152510c"
+checksum = "f664b3447458ff1c5fee7043990271072bccbd1300f151b2ae84fb461b442824"
 dependencies = [
  "cfg-if 1.0.0",
 ]

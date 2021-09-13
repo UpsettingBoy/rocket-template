@@ -11,4 +11,4 @@ rocket         = "0.4.10"
 rocket_contrib = { version = "0.4.10", default-features = false, features = ["serve"] }
 
 [build-dependencies]
-npm_rs = "0.1"
+npm_rs = "0.2"
