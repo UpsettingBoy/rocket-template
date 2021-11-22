@@ -1,16 +1,14 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
-use rocket::{get, routes};
-use rocket_contrib::serve::StaticFiles;
+use rocket::{fs::FileServer, get, launch, routes};
 
 mod templates;
 
-fn main() {
-    rocket::ignite()
-        .mount("/public/css", StaticFiles::from("public/css"))
-        .mount("/public/assets", StaticFiles::from("public/assets"))
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
         .mount("/", routes![index])
-        .launch();
+        .mount("/public", FileServer::from("public"))
 }
 
 #[get("/")]
